@@ -59,16 +59,18 @@ This project **merges IoT with NAS**, providing:
 ## 🏗 System Architecture
 A **distributed storage model** is used to manage data from IoT devices:
 
-[ IoT Devices ] --> [ Raspberry Pi 4 Running OMV ] --> [ HDD, SSD, USB, SD ] ↑ [ Security & Access Control ]
+<img width="415" alt="image" src="https://github.com/user-attachments/assets/48a54eaa-d76d-4d7f-a91b-5378d7513c90" />
 
 ---
-
 
 1. **IoT Devices** generate and send data to the Raspberry Pi.
 2. **Raspberry Pi 4** (the NAS server) handles data processing, security, and management.
 3. **Storage Devices** (HDD/SSD/USB/SD) store the incoming data.
 4. **OpenMediaVault** provides a user-friendly web interface for administration.
 5. **SMB/CIFS** or other protocols allow network-based file sharing.
+
+<img width="331" alt="image" src="https://github.com/user-attachments/assets/88ff2032-35e6-426a-b9c8-8b20d0e3533e" />
+
 
 ---
 
@@ -103,6 +105,8 @@ A **distributed storage model** is used to manage data from IoT devices:
 3. Wait for the installation to complete (it may take several minutes).
 4. The system will reboot automatically once done.
 
+![image](https://github.com/user-attachments/assets/877c8aea-79f6-4209-b0db-ed04e2376037)
+
 ---
 
 ### **Step 3: Access OMV Web Interface**
@@ -113,6 +117,9 @@ A **distributed storage model** is used to manage data from IoT devices:
 Username: admin<br>
 Password: admin<br>
 5. Immediately change the default admin password under System > General Settings for security.
+
+![image](https://github.com/user-attachments/assets/863ac0c1-2680-4a37-abc5-ff7c50e4aaba)
+
 
 ---
 
@@ -126,6 +133,8 @@ Click “Create”, select the disk, and choose a file system type (e.g., ext4).
 5. Mount the file system:<br>
 After creation, select it and click “Mount”.<br>
 Click “Apply” to confirm changes.<br>
+
+![image](https://github.com/user-attachments/assets/d18f3469-7a7b-4201-b3ba-c18a666ecb9e)
 
 ---
 
