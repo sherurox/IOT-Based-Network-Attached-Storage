@@ -103,6 +103,7 @@ A **distributed storage model** is used to manage data from IoT devices:
 3. Wait for the installation to complete (it may take several minutes).
 4. The system will reboot automatically once done.
 
+---
 
 ### **Step 3: Access OMV Web Interface**
 1. Find the IP address of your Raspberry Pi (e.g., via ifconfig or your router’s DHCP list).
@@ -112,4 +113,66 @@ A **distributed storage model** is used to manage data from IoT devices:
 Username: admin<br>
 Password: admin<br>
 5. Immediately change the default admin password under System > General Settings for security.
+
+---
+
+### **Step 4: Configure Storage in OMV**
+1. Connect your external drives (HDD, SSD, USB, etc.) via USB.
+2. In the OMV UI, go to Storage > Disks.
+3. Select each disk and click “Wipe” if needed (erases existing data).
+4. Create a File System: <br>
+Navigate to Storage > File Systems.<br>
+Click “Create”, select the disk, and choose a file system type (e.g., ext4).<br>
+5. Mount the file system:<br>
+After creation, select it and click “Mount”.<br>
+Click “Apply” to confirm changes.<br>
+
+---
+
+### **Step 5: Create Shared Folders**
+1. In OMV, go to Storage > Shared Folders.
+2. Click “Add”.
+3. Provide: <br>
+A Name (e.g., Data, HDD1, etc.).<br>
+A Path (auto-generated if you prefer).<br>
+The File System you created in Step 4.<br>
+4. Set Permissions (e.g., Read/Write for admin, etc.).
+5. Repeat for each storage device (HDD, SSD, USB).
+
+---
+
+### **Step 6: Allocate Storage Space**
+(Advanced Users Only)
+
+By default, the entire disk space is available under each mounted file system.<br>
+If you need precise control (quotas, partial allocations), you can configure:<br>
+LVM (Logical Volume Manager) for more flexible partitioning.<br>
+Quotas via Storage > File Systems > Quota in OMV to limit user space<br>
+
+---
+
+### **Step 7: Set Up Network Shares**
+1. Enable SMB/CIFS:<br>
+Go to Services > SMB/CIFS.<br>
+Click “Enable” and “Save”.<br>
+Adjust settings as required (workgroup name, etc.).<br>
+2. Add SMB Shares:<br>
+Under Services > SMB/CIFS > Shares, click “Add”.<br>
+Select the Shared Folder created in Step 5.<br>
+Adjust permissions and enable “Public” if you want open access on your LAN.<br>
+3. Apply Config: Confirm and apply changes.<br>
+4. Access from Other Devices:<br>
+Windows: \\<RaspberryPi_IP_Address><br>
+macOS/Linux: smb://<RaspberryPi_IP_Address>/<br>
+5. (Optional): You can also configure FTP, NFS, or AFP if you have specific use cases.<br>
+
+
+
+
+
+
+
+
+
+
 
