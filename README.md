@@ -257,8 +257,6 @@ Feel free to share and fork to help others set up their own IoT-NAS.
 2. **Commit** the file and **push it** to GitHub.
 3. Your repository now contains **detailed performance evaluation, security measures, future enhancements, and contribution guidelines**.
 
-🚀 **Your IoT-NAS project now has a complete and professional `README.md`!** 🚀
-
 
 
 
